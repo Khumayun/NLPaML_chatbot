@@ -1,7 +1,9 @@
-import telepot
+import telegram
+from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import spacy
 import requests
 from bs4 import BeautifulSoup
+
 
 # Download and load the NLP model
 nlp = spacy.load('en_core_web_sm')
@@ -19,31 +21,38 @@ text = soup.get_text()
 # Process the text with the NLP model
 doc = nlp(text)
 
+# Define a function to handle incoming messages
+def handle_message(update, context):
+    message = update.message.text
+    # Process the user's message with the NLP model
+    user_doc = nlp(message)
+    # Find the most relevant sentence in the documentation
+    best_sent = None
+    best_score = 0
+    for sent in doc.sents:
+        score = user_doc.similarity(sent)
+        if score > best_score:
+            best_sent = sent
+            best_score = score
+    # Send the best sentence as a reply
+    if best_sent is not None:
+        update.message.reply_text(best_sent.text)
+    else:
+        update.message.reply_text("Sorry, I couldn't find an answer to your question.")
 
-def handle_message(msg):
-    content_type, chat_type, chat_id = telepot.glance(msg)
-    if content_type == 'text':
-        message = msg['text']
-        # Process the user's message with the NLP model
-        user_doc = nlp(message)
-        # Find the most relevant sentence in the documentation
-        best_sent = None
-        best_score = 0
-        for sent in doc.sents:
-            score = user_doc.similarity(sent)
-            if score > best_score:
-                best_sent = sent
-                best_score = score
-        # Send the best sentence as a reply
-        if best_sent is not None:
-            bot.sendMessage(chat_id, best_sent.text)
-        else:
-            bot.sendMessage(chat_id, "Sorry, I couldn't find an answer to your question.")
 
-# Replace YOUR_BOT_TOKEN with your actual bot token
-bot = telepot.Bot('572928607:AAGbOuBN9EhePacIUg-h3NtlPAV2I4P1XWQ')
-bot.message_loop(handle_message)
+def main():
+    # Create an instance of the Updater class and pass in your bot's token
+    updater = Updater(token='572928607:AAExZtc_sCMwHltg4d2Rump8RNqIxcxKLAM', use_context=True)
+    # Get a reference to the dispatcher object
+    dispatcher = updater.dispatcher
+    # Register a message handler function
+    message_handler = MessageHandler(Filters.text, handle_message)
+    dispatcher.add_handler(message_handler)
+    # Start polling for new messages
+    updater.start_polling()
+    updater.idle()
 
-print('Listening for messages...')
-while True:
-    pass
+
+if __name__ == '__main__':
+    main()
