@@ -47,7 +47,7 @@ __name__ = '&lt;doctest&gt;'</comment>
                             <paragraph>Counter</paragraph>
                         </entry>
                         <entry>
-                            <paragraph>dict subclass for counting <inline classes="xref std std-term">hashable</inline> objects</paragraph>
+                            <paragraph>dict subclass for counting hashable objects</paragraph>
                         </entry>
                     </row>
                     <row>
@@ -95,7 +95,7 @@ __name__ = '&lt;doctest&gt;'</comment>
         </table>
         <section ids="chainmap-objects" names="chainmap\ objects">
             <title>ChainMap objects</title>
-            <versionmodified type="versionadded" version="3.3"><paragraph translatable="False"><inline classes="versionmodified added">New in version 3.3.</inline></paragraph></versionmodified>
+            <versionmodified type="versionadded" version="3.3"><paragraph translatable="False">New in version 3.3.</paragraph></versionmodified>
             <paragraph>A ChainMap class is provided for quickly linking a number of mappings
                 so they can be treated as a single unit.  It is often much faster than creating
                 a new dictionary and running multiple update() calls.</paragraph>
@@ -129,7 +129,7 @@ __name__ = '&lt;doctest&gt;'</comment>
                     </desc>
                     <index entries="['single',\ 'new_child()\ (collections.ChainMap\ method)',\ 'collections.ChainMap.new_child',\ '',\ None]"></index>
                     <desc classes="py method" desctype="method" domain="py" noindex="False" objtype="method">
-                        <desc_signature class="ChainMap" classes="sig sig-object py sig sig-object" fullname="ChainMap.new_child" ids="collections.ChainMap.new_child" module="collections"><desc_name classes="sig-name descname sig-name descname" xml:space="preserve">new_child</desc_name><desc_parameterlist xml:space="preserve"><desc_parameter xml:space="preserve"><desc_sig_name classes="n n">m</desc_sig_name><desc_sig_operator classes="o o">=</desc_sig_operator><inline classes="default_value" support_smartquotes="False">None</inline></desc_parameter><desc_parameter xml:space="preserve"><desc_sig_operator classes="o o">**</desc_sig_operator><desc_sig_name classes="n n">kwargs</desc_sig_name></desc_parameter></desc_parameterlist></desc_signature>
+                        <desc_signature class="ChainMap" classes="sig sig-object py sig sig-object" fullname="ChainMap.new_child" ids="collections.ChainMap.new_child" module="collections"><desc_name classes="sig-name descname sig-name descname" xml:space="preserve">new_child</desc_name><desc_parameterlist xml:space="preserve"><desc_parameter xml:space="preserve"><desc_sig_name classes="n n">m</desc_sig_name><desc_sig_operator classes="o o">=</desc_sig_operator>None</desc_parameter><desc_parameter xml:space="preserve"><desc_sig_operator classes="o o">**</desc_sig_operator><desc_sig_name classes="n n">kwargs</desc_sig_name></desc_parameter></desc_parameterlist></desc_signature>
                         <desc_content>
                             <paragraph>Returns a new ChainMap containing a new map followed by
                                 all of the maps in the current instance.  If m is specified,
@@ -139,8 +139,8 @@ __name__ = '&lt;doctest&gt;'</comment>
                                 are specified, they update passed map or new empty dict. This method
                                 is used for creating subcontexts that can be updated without altering
                                 values in any of the parent mappings.</paragraph>
-                            <versionmodified type="versionchanged" version="3.4"><paragraph translatable="False"><inline classes="versionmodified changed">Changed in version 3.4: </inline>The optional m parameter was added.</paragraph></versionmodified>
-                            <versionmodified type="versionchanged" version="3.10"><paragraph translatable="False"><inline classes="versionmodified changed">Changed in version 3.10: </inline>Keyword arguments support was added.</paragraph></versionmodified>
+                            <versionmodified type="versionchanged" version="3.4"><paragraph translatable="False">Changed in version 3.4: The optional m parameter was added.</paragraph></versionmodified>
+                            <versionmodified type="versionchanged" version="3.10"><paragraph translatable="False">Changed in version 3.10: Keyword arguments support was added.</paragraph></versionmodified>
                         </desc_content>
                     </desc>
                     <index entries="['single',\ 'parents\ (collections.ChainMap\ attribute)',\ 'collections.ChainMap.parents',\ '',\ None]"></index>
@@ -150,24 +150,24 @@ __name__ = '&lt;doctest&gt;'</comment>
                             <paragraph>Property returning a new ChainMap containing all of the maps in
                                 the current instance except the first one.  This is useful for skipping
                                 the first map in the search.  Use cases are similar to those for the
-                                nonlocal keyword used in <inline classes="xref std std-term">nested scopes</inline>.  The use cases also parallel those for the built-in
+                                nonlocal keyword used in nested scopes.  The use cases also parallel those for the built-in
                                 super() function.  A reference to d.parents is equivalent to:
                                 ChainMap(*d.maps[1:]).</paragraph>
                         </desc_content>
                     </desc>
                     <paragraph>Note, the iteration order of a ChainMap() is determined by
                         scanning the mappings last to first:</paragraph>
-                    <literal_block force="False" language="python3" linenos="False" xml:space="preserve">&gt;&gt;&gt; baseline = {'music': 'bach', 'art': 'rembrandt'}
+                    <paragraph>&gt;&gt;&gt; baseline = {'music': 'bach', 'art': 'rembrandt'}
 &gt;&gt;&gt; adjustments = {'art': 'van gogh', 'opera': 'carmen'}
 &gt;&gt;&gt; list(ChainMap(adjustments, baseline))
-['music', 'art', 'opera']</literal_block>
+['music', 'art', 'opera']</paragraph>
                     <paragraph>This gives the same ordering as a series of dict.update() calls
                         starting with the last mapping:</paragraph>
-                    <literal_block force="False" language="python3" linenos="False" xml:space="preserve">&gt;&gt;&gt; combined = baseline.copy()
+                    <paragraph>&gt;&gt;&gt; combined = baseline.copy()
 &gt;&gt;&gt; combined.update(adjustments)
 &gt;&gt;&gt; list(combined)
-['music', 'art', 'opera']</literal_block>
-                    <versionmodified type="versionchanged" version="3.9"><paragraph translatable="False"><inline classes="versionmodified changed">Changed in version 3.9: </inline>Added support for | and |= operators, specified in <index entries="['single',\ 'Python\ Enhancement\ Proposals;\ PEP\ 584',\ 'index-0',\ '',\ None]"></index><target ids="index-0"></target><strong>PEP 584</strong>.</paragraph></versionmodified>
+['music', 'art', 'opera']</paragraph>
+                    <versionmodified type="versionchanged" version="3.9"><paragraph translatable="False">Changed in version 3.9: Added support for | and |= operators, specified in <index entries="['single',\ 'Python\ Enhancement\ Proposals;\ PEP\ 584',\ 'index-0',\ '',\ None]"></index><target ids="index-0"></target><strong>PEP 584</strong>.</paragraph></versionmodified>
                 </desc_content>
             </desc>
             <seealso>
@@ -198,11 +198,11 @@ __name__ = '&lt;doctest&gt;'</comment>
                 <title>ChainMap Examples and Recipes</title>
                 <paragraph>This section shows various approaches to working with chained maps.</paragraph>
                 <paragraph>Example of simulating Python’s internal lookup chain:</paragraph>
-                <literal_block force="False" language="python3" linenos="False" xml:space="preserve">import builtins
-pylookup = ChainMap(locals(), globals(), vars(builtins))</literal_block>
+                <paragraph>import builtins
+pylookup = ChainMap(locals(), globals(), vars(builtins))</paragraph>
                 <paragraph>Example of letting user specified command-line arguments take precedence over
                     environment variables which in turn take precedence over default values:</paragraph>
-                <literal_block force="False" language="python3" linenos="False" xml:space="preserve">import os, argparse
+                <paragraph>import os, argparse
 
 defaults = {'color': 'red', 'user': 'guest'}
 
@@ -214,10 +214,10 @@ command_line_args = {k: v for k, v in vars(namespace).items() if v is not None}
 
 combined = ChainMap(command_line_args, os.environ, defaults)
 print(combined['color'])
-print(combined['user'])</literal_block>
+print(combined['user'])</paragraph>
                 <paragraph>Example patterns for using the ChainMap class to simulate nested
                     contexts:</paragraph>
-                <literal_block force="False" language="python3" linenos="False" xml:space="preserve">c = ChainMap()        # Create root context
+                <paragraph>c = ChainMap()        # Create root context
 d = c.new_child()     # Create nested child context
 e = c.new_child()     # Child of c, independent from d
 e.maps[0]             # Current context dictionary -- like Python's locals()
@@ -231,12 +231,12 @@ list(d)               # All nested values
 k in d                # Check all nested values
 len(d)                # Number of nested values
 d.items()             # All nested items
-dict(d)               # Flatten into a regular dictionary</literal_block>
+dict(d)               # Flatten into a regular dictionary</paragraph>
                 <paragraph>The ChainMap class only makes updates (writes and deletions) to the
                     first mapping in the chain while lookups will search the full chain.  However,
                     if deep writes and deletions are desired, it is easy to make a subclass that
                     updates keys found deeper in the chain:</paragraph>
-                <literal_block force="False" language="python3" linenos="False" xml:space="preserve">class DeepChainMap(ChainMap):
+                <paragraph>class DeepChainMap(ChainMap):
     'Variant of ChainMap that allows direct updates to inner scopes'
 
     def __setitem__(self, key, value):
@@ -258,14 +258,14 @@ dict(d)               # Flatten into a regular dictionary</literal_block>
 &gt;&gt;&gt; d['snake'] = 'red'           # new keys get added to the topmost dict
 &gt;&gt;&gt; del d['elephant']            # remove an existing key one level down
 &gt;&gt;&gt; d                            # display result
-DeepChainMap({'zebra': 'black', 'snake': 'red'}, {}, {'lion': 'orange'})</literal_block>
+DeepChainMap({'zebra': 'black', 'snake': 'red'}, {}, {'lion': 'orange'})</paragraph>
             </section>
         </section>
         <section ids="counter-objects" names="counter\ objects">
             <title>Counter objects</title>
             <paragraph>A counter tool is provided to support convenient and rapid tallies.
                 For example:</paragraph>
-            <literal_block force="False" language="python3" linenos="False" xml:space="preserve">&gt;&gt;&gt; # Tally occurrences of words in a list
+            <paragraph>&gt;&gt;&gt; # Tally occurrences of words in a list
 &gt;&gt;&gt; cnt = Counter()
 &gt;&gt;&gt; for word in ['red', 'blue', 'red', 'green', 'blue', 'blue']:
 ...     cnt[word] += 1
@@ -278,12 +278,12 @@ Counter({'blue': 3, 'red': 2, 'green': 1})
 &gt;&gt;&gt; words = re.findall(r'\w+', open('hamlet.txt').read().lower())
 &gt;&gt;&gt; Counter(words).most_common(10)
 [('the', 1143), ('and', 966), ('to', 762), ('of', 669), ('i', 631),
- ('you', 554),  ('a', 546), ('my', 514), ('hamlet', 471), ('in', 451)]</literal_block>
+ ('you', 554),  ('a', 546), ('my', 514), ('hamlet', 471), ('in', 451)]</paragraph>
             <index entries="['single',\ 'Counter\ (class\ in\ collections)',\ 'collections.Counter',\ '',\ None]"></index>
             <desc classes="py class" desctype="class" domain="py" noindex="False" objtype="class">
                 <desc_signature class="" classes="sig sig-object py sig sig-object" fullname="Counter" ids="collections.Counter" module="collections"><desc_annotation xml:space="preserve">class<desc_sig_space classes="w w">  </desc_sig_space></desc_annotation><desc_addname classes="sig-prename descclassname sig-prename descclassname" xml:space="preserve">collections.</desc_addname><desc_name classes="sig-name descname sig-name descname" xml:space="preserve">Counter</desc_name><desc_parameterlist xml:space="preserve"><desc_optional xml:space="preserve"><desc_parameter xml:space="preserve"><desc_sig_name classes="n n">iterable-or-mapping</desc_sig_name></desc_parameter></desc_optional></desc_parameterlist></desc_signature>
                 <desc_content>
-                    <paragraph>A Counter is a dict subclass for counting <inline classes="xref std std-term">hashable</inline> objects.
+                    <paragraph>A Counter is a dict subclass for counting hashable objects.
                         It is a collection where elements are stored as dictionary keys
                         and their counts are stored as dictionary values.  Counts are allowed to be
                         any integer value including zero or negative counts.  The Counter
@@ -303,8 +303,8 @@ Counter({'blue': 3, 'red': 2, 'green': 1})
                         Use del to remove it entirely:</paragraph>
                     <doctest_block classes="doctest" xml:space="preserve">&gt;&gt;&gt; c['sausage'] = 0                        # counter entry with a zero count
 &gt;&gt;&gt; del c['sausage']                        # del actually removes the entry</doctest_block>
-                    <versionmodified type="versionadded" version="3.1"><paragraph translatable="False"><inline classes="versionmodified added">New in version 3.1.</inline></paragraph></versionmodified>
-                    <versionmodified type="versionchanged" version="3.7"><paragraph translatable="False"><inline classes="versionmodified changed">Changed in version 3.7: </inline>As a dict subclass, Counter
+                    <versionmodified type="versionadded" version="3.1"><paragraph translatable="False">New in version 3.1.</paragraph></versionmodified>
+                    <versionmodified type="versionchanged" version="3.7"><paragraph translatable="False">Changed in version 3.7: As a dict subclass, Counter
                             inherited the capability to remember insertion order.  Math operations
                             on <emphasis>Counter</emphasis> objects also preserve order.  Results are ordered
                             according to when an element is first encountered in the left operand
@@ -347,7 +347,7 @@ Counter({'blue': 3, 'red': 2, 'green': 1})
 &gt;&gt;&gt; c.subtract(d)
 &gt;&gt;&gt; c
 Counter({'a': 3, 'b': 0, 'c': -3, 'd': -6})</doctest_block>
-                            <versionmodified type="versionadded" version="3.2"><paragraph translatable="False"><inline classes="versionmodified added">New in version 3.2.</inline></paragraph></versionmodified>
+                            <versionmodified type="versionadded" version="3.2"><paragraph translatable="False">New in version 3.2.</paragraph></versionmodified>
                         </desc_content>
                     </desc>
                     <index entries="['single',\ 'total()\ (collections.Counter\ method)',\ 'collections.Counter.total',\ '',\ None]"></index>
@@ -358,7 +358,7 @@ Counter({'a': 3, 'b': 0, 'c': -3, 'd': -6})</doctest_block>
                             <doctest_block classes="doctest" xml:space="preserve">&gt;&gt;&gt; c = Counter(a=10, b=5, c=0)
 &gt;&gt;&gt; c.total()
 15</doctest_block>
-                            <versionmodified type="versionadded" version="3.10"><paragraph translatable="False"><inline classes="versionmodified added">New in version 3.10.</inline></paragraph></versionmodified>
+                            <versionmodified type="versionadded" version="3.10"><paragraph translatable="False">New in version 3.10.</paragraph></versionmodified>
                         </desc_content>
                     </desc>
                     <paragraph>The usual dictionary methods are available for Counter objects
@@ -386,12 +386,12 @@ Counter({'a': 3, 'b': 0, 'c': -3, 'd': -6})</doctest_block>
                 superset relationships: ==, !=, &lt;, &lt;=, &gt;, &gt;=.
                 All of those tests treat missing elements as having zero counts so that
                 Counter(a=1) == Counter(a=1, b=0) returns true.</paragraph>
-            <versionmodified type="versionadded" version="3.10"><paragraph translatable="False"><inline classes="versionmodified added">New in version 3.10: </inline>Rich comparison operations were added.</paragraph></versionmodified>
-            <versionmodified type="versionchanged" version="3.10"><paragraph translatable="False"><inline classes="versionmodified changed">Changed in version 3.10: </inline>In equality tests, missing elements are treated as having zero counts.
+            <versionmodified type="versionadded" version="3.10"><paragraph translatable="False">New in version 3.10: Rich comparison operations were added.</paragraph></versionmodified>
+            <versionmodified type="versionchanged" version="3.10"><paragraph translatable="False">Changed in version 3.10: In equality tests, missing elements are treated as having zero counts.
                     Formerly, Counter(a=3) and Counter(a=3, b=0) were considered
                     distinct.</paragraph></versionmodified>
             <paragraph>Common patterns for working with Counter objects:</paragraph>
-            <literal_block force="False" language="python3" linenos="False" xml:space="preserve">c.total()                       # total of all counts
+            <paragraph>c.total()                       # total of all counts
 c.clear()                       # reset all counts
 list(c)                         # list unique elements
 set(c)                          # convert to a set
@@ -399,7 +399,7 @@ dict(c)                         # convert to a regular dictionary
 c.items()                       # convert to a list of (elem, cnt) pairs
 Counter(dict(list_of_pairs))    # convert from a list of (elem, cnt) pairs
 c.most_common()[:-n-1:-1]       # n least common elements
-+c                              # remove zero and negative counts</literal_block>
++c                              # remove zero and negative counts</paragraph>
             <paragraph>Several mathematical operations are provided for combining Counter
                 objects to produce multisets (counters that have counts greater than zero).
                 Addition and subtraction combine counters by adding or subtracting the counts
@@ -407,7 +407,7 @@ c.most_common()[:-n-1:-1]       # n least common elements
                 maximum of corresponding counts.  Equality and inclusion compare
                 corresponding counts.  Each operation can accept inputs with signed
                 counts, but the output will exclude results with counts of zero or less.</paragraph>
-            <literal_block groups="default" language="pycon3" linenos="False" options="{}" testnodetype="doctest" xml:space="preserve">&gt;&gt;&gt; c = Counter(a=3, b=1)
+            <paragraph>&gt;&gt;&gt; c = Counter(a=3, b=1)
 &gt;&gt;&gt; d = Counter(a=1, b=2)
 &gt;&gt;&gt; c + d                       # add two counters together:  c[x] + d[x]
 Counter({'a': 4, 'b': 3})
@@ -420,7 +420,7 @@ Counter({'a': 3, 'b': 2})
 &gt;&gt;&gt; c == d                      # equality:  c[x] == d[x]
 False
 &gt;&gt;&gt; c &lt;= d                      # inclusion:  c[x] &lt;= d[x]
-False</literal_block>
+False</paragraph>
             <paragraph>Unary addition and subtraction are shortcuts for adding an empty counter
                 or subtracting from an empty counter.</paragraph>
             <doctest_block classes="doctest" xml:space="preserve">&gt;&gt;&gt; c = Counter(a=2, b=-4)
@@ -428,7 +428,7 @@ False</literal_block>
 Counter({'a': 2})
 &gt;&gt;&gt; -c
 Counter({'b': 4})</doctest_block>
-            <versionmodified type="versionadded" version="3.3"><paragraph translatable="False"><inline classes="versionmodified added">New in version 3.3: </inline>Added support for unary plus, unary minus, and in-place multiset operations.</paragraph></versionmodified>
+            <versionmodified type="versionadded" version="3.3"><paragraph translatable="False">New in version 3.3: Added support for unary plus, unary minus, and in-place multiset operations.</paragraph></versionmodified>
             <note>
                 <paragraph>Counters were primarily designed to work with positive integers to represent
                     running counts; however, care was taken to not unnecessarily preclude use
@@ -483,7 +483,7 @@ Counter({'b': 4})</doctest_block>
                     <list_item>
                         <paragraph>To enumerate all distinct multisets of a given size over a given set of
                             elements, see itertools.combinations_with_replacement():</paragraph>
-                        <literal_block force="False" language="python3" linenos="False" xml:space="preserve">map(Counter, combinations_with_replacement('ABC', 2)) # --&gt; AA AB AC BB BC CC</literal_block>
+                        <paragraph>map(Counter, combinations_with_replacement('ABC', 2)) # --&gt; AA AB AC BB BC CC</paragraph>
                     </list_item>
                 </bullet_list>
             </seealso>
@@ -538,7 +538,7 @@ Counter({'b': 4})</doctest_block>
                         <desc_signature class="deque" classes="sig sig-object py sig sig-object" fullname="deque.copy" ids="collections.deque.copy" module="collections"><desc_name classes="sig-name descname sig-name descname" xml:space="preserve">copy</desc_name><desc_parameterlist xml:space="preserve"></desc_parameterlist></desc_signature>
                         <desc_content>
                             <paragraph>Create a shallow copy of the deque.</paragraph>
-                            <versionmodified type="versionadded" version="3.5"><paragraph translatable="False"><inline classes="versionmodified added">New in version 3.5.</inline></paragraph></versionmodified>
+                            <versionmodified type="versionadded" version="3.5"><paragraph translatable="False">New in version 3.5.</paragraph></versionmodified>
                         </desc_content>
                     </desc>
                     <index entries="['single',\ 'count()\ (collections.deque\ method)',\ 'collections.deque.count',\ '',\ None]"></index>
@@ -546,7 +546,7 @@ Counter({'b': 4})</doctest_block>
                         <desc_signature class="deque" classes="sig sig-object py sig sig-object" fullname="deque.count" ids="collections.deque.count" module="collections"><desc_name classes="sig-name descname sig-name descname" xml:space="preserve">count</desc_name><desc_parameterlist xml:space="preserve"><desc_parameter xml:space="preserve"><desc_sig_name classes="n n">x</desc_sig_name></desc_parameter></desc_parameterlist></desc_signature>
                         <desc_content>
                             <paragraph>Count the number of deque elements equal to <emphasis>x</emphasis>.</paragraph>
-                            <versionmodified type="versionadded" version="3.2"><paragraph translatable="False"><inline classes="versionmodified added">New in version 3.2.</inline></paragraph></versionmodified>
+                            <versionmodified type="versionadded" version="3.2"><paragraph translatable="False">New in version 3.2.</paragraph></versionmodified>
                         </desc_content>
                     </desc>
                     <index entries="['single',\ 'extend()\ (collections.deque\ method)',\ 'collections.deque.extend',\ '',\ None]"></index>
@@ -573,7 +573,7 @@ Counter({'b': 4})</doctest_block>
                             <paragraph>Return the position of <emphasis>x</emphasis> in the deque (at or after index <emphasis>start</emphasis>
                                 and before index <emphasis>stop</emphasis>).  Returns the first match or raises
                                 ValueError if not found.</paragraph>
-                            <versionmodified type="versionadded" version="3.5"><paragraph translatable="False"><inline classes="versionmodified added">New in version 3.5.</inline></paragraph></versionmodified>
+                            <versionmodified type="versionadded" version="3.5"><paragraph translatable="False">New in version 3.5.</paragraph></versionmodified>
                         </desc_content>
                     </desc>
                     <index entries="['single',\ 'insert()\ (collections.deque\ method)',\ 'collections.deque.insert',\ '',\ None]"></index>
@@ -583,7 +583,7 @@ Counter({'b': 4})</doctest_block>
                             <paragraph>Insert <emphasis>x</emphasis> into the deque at position <emphasis>i</emphasis>.</paragraph>
                             <paragraph>If the insertion would cause a bounded deque to grow beyond <emphasis>maxlen</emphasis>,
                                 an IndexError is raised.</paragraph>
-                            <versionmodified type="versionadded" version="3.5"><paragraph translatable="False"><inline classes="versionmodified added">New in version 3.5.</inline></paragraph></versionmodified>
+                            <versionmodified type="versionadded" version="3.5"><paragraph translatable="False">New in version 3.5.</paragraph></versionmodified>
                         </desc_content>
                     </desc>
                     <index entries="['single',\ 'pop()\ (collections.deque\ method)',\ 'collections.deque.pop',\ '',\ None]"></index>
@@ -615,12 +615,12 @@ Counter({'b': 4})</doctest_block>
                         <desc_signature class="deque" classes="sig sig-object py sig sig-object" fullname="deque.reverse" ids="collections.deque.reverse" module="collections"><desc_name classes="sig-name descname sig-name descname" xml:space="preserve">reverse</desc_name><desc_parameterlist xml:space="preserve"></desc_parameterlist></desc_signature>
                         <desc_content>
                             <paragraph>Reverse the elements of the deque in-place and then return None.</paragraph>
-                            <versionmodified type="versionadded" version="3.2"><paragraph translatable="False"><inline classes="versionmodified added">New in version 3.2.</inline></paragraph></versionmodified>
+                            <versionmodified type="versionadded" version="3.2"><paragraph translatable="False">New in version 3.2.</paragraph></versionmodified>
                         </desc_content>
                     </desc>
                     <index entries="['single',\ 'rotate()\ (collections.deque\ method)',\ 'collections.deque.rotate',\ '',\ None]"></index>
                     <desc classes="py method" desctype="method" domain="py" noindex="False" objtype="method">
-                        <desc_signature class="deque" classes="sig sig-object py sig sig-object" fullname="deque.rotate" ids="collections.deque.rotate" module="collections"><desc_name classes="sig-name descname sig-name descname" xml:space="preserve">rotate</desc_name><desc_parameterlist xml:space="preserve"><desc_parameter xml:space="preserve"><desc_sig_name classes="n n">n</desc_sig_name><desc_sig_operator classes="o o">=</desc_sig_operator><inline classes="default_value" support_smartquotes="False">1</inline></desc_parameter></desc_parameterlist></desc_signature>
+                        <desc_signature class="deque" classes="sig sig-object py sig sig-object" fullname="deque.rotate" ids="collections.deque.rotate" module="collections"><desc_name classes="sig-name descname sig-name descname" xml:space="preserve">rotate</desc_name><desc_parameterlist xml:space="preserve"><desc_parameter xml:space="preserve"><desc_sig_name classes="n n">n</desc_sig_name><desc_sig_operator classes="o o">=</desc_sig_operator>1</desc_parameter></desc_parameterlist></desc_signature>
                         <desc_content>
                             <paragraph>Rotate the deque <emphasis>n</emphasis> steps to the right.  If <emphasis>n</emphasis> is negative, rotate
                                 to the left.</paragraph>
@@ -635,7 +635,7 @@ Counter({'b': 4})</doctest_block>
                         <desc_signature class="deque" classes="sig sig-object py sig sig-object" fullname="deque.maxlen" ids="collections.deque.maxlen" module="collections"><desc_name classes="sig-name descname sig-name descname" xml:space="preserve">maxlen</desc_name></desc_signature>
                         <desc_content>
                             <paragraph>Maximum size of a deque or None if unbounded.</paragraph>
-                            <versionmodified type="versionadded" version="3.1"><paragraph translatable="False"><inline classes="versionmodified added">New in version 3.1.</inline></paragraph></versionmodified>
+                            <versionmodified type="versionadded" version="3.1"><paragraph translatable="False">New in version 3.1.</paragraph></versionmodified>
                         </desc_content>
                     </desc>
                 </desc_content>
@@ -648,7 +648,7 @@ Counter({'b': 4})</doctest_block>
             <paragraph>Starting in version 3.5, deques support __add__(), __mul__(),
                 and __imul__().</paragraph>
             <paragraph>Example:</paragraph>
-            <literal_block groups="default" language="pycon3" linenos="False" options="{}" testnodetype="doctest" xml:space="preserve">&gt;&gt;&gt; from collections import deque
+            <paragraph>&gt;&gt;&gt; from collections import deque
 &gt;&gt;&gt; d = deque('ghi')                 # make a new deque with three items
 &gt;&gt;&gt; for elem in d:                   # iterate over the deque's elements
 ...     print(elem.upper())
@@ -697,19 +697,19 @@ IndexError: pop from an empty deque
 
 &gt;&gt;&gt; d.extendleft('abc')              # extendleft() reverses the input order
 &gt;&gt;&gt; d
-deque(['c', 'b', 'a'])</literal_block>
+deque(['c', 'b', 'a'])</paragraph>
             <section ids="deque-recipes" names="deque\ recipes">
                 <title>deque Recipes</title>
                 <paragraph>This section shows various approaches to working with deques.</paragraph>
                 <paragraph>Bounded length deques provide functionality similar to the tail filter
                     in Unix:</paragraph>
-                <literal_block force="False" language="python3" linenos="False" xml:space="preserve">def tail(filename, n=10):
+                <paragraph>def tail(filename, n=10):
     'Return the last n lines of a file'
     with open(filename) as f:
-        return deque(f, n)</literal_block>
+        return deque(f, n)</paragraph>
                 <paragraph>Another approach to using deques is to maintain a sequence of recently
                     added elements by appending to the right and popping to the left:</paragraph>
-                <literal_block force="False" language="python3" linenos="False" xml:space="preserve">def moving_average(iterable, n=3):
+                <paragraph>def moving_average(iterable, n=3):
     # moving_average([40, 30, 50, 46, 39, 44]) --&gt; 40.0 42.0 45.0 43.0
     # https://en.wikipedia.org/wiki/Moving_average
     it = iter(iterable)
@@ -719,13 +719,13 @@ deque(['c', 'b', 'a'])</literal_block>
     for elem in it:
         s += elem - d.popleft()
         d.append(elem)
-        yield s / n</literal_block>
+        yield s / n</paragraph>
                 <paragraph>A round-robin scheduler<target ids="round-robin-scheduler" names="round-robin\ scheduler" refuri="https://en.wikipedia.org/wiki/Round-robin_scheduling"></target> can be implemented with
                     input iterators stored in a deque.  Values are yielded from the active
                     iterator in position zero.  If that iterator is exhausted, it can be removed
                     with popleft(); otherwise, it can be cycled back to the end with
                     the rotate() method:</paragraph>
-                <literal_block force="False" language="python3" linenos="False" xml:space="preserve">def roundrobin(*iterables):
+                <paragraph>def roundrobin(*iterables):
     "roundrobin('ABC', 'D', 'EF') --&gt; A D E B F C"
     iterators = deque(map(iter, iterables))
     while iterators:
@@ -735,14 +735,14 @@ deque(['c', 'b', 'a'])</literal_block>
                 iterators.rotate(-1)
         except StopIteration:
             # Remove an exhausted iterator.
-            iterators.popleft()</literal_block>
+            iterators.popleft()</paragraph>
                 <paragraph>The rotate() method provides a way to implement deque slicing and
                     deletion.  For example, a pure Python implementation of del d[n] relies on
                     the rotate() method to position elements to be popped:</paragraph>
-                <literal_block force="False" language="python3" linenos="False" xml:space="preserve">def delete_nth(d, n):
+                <paragraph>def delete_nth(d, n):
     d.rotate(-n)
     d.popleft()
-    d.rotate(n)</literal_block>
+    d.rotate(n)</paragraph>
                 <paragraph>To implement deque slicing, use a similar approach applying
                     rotate() to bring a target element to the left side of the deque. Remove
                     old entries with popleft(), add new entries with extend(), and then
@@ -798,7 +798,7 @@ deque(['c', 'b', 'a'])</literal_block>
                                 None, if absent.</paragraph>
                         </desc_content>
                     </desc>
-                    <versionmodified type="versionchanged" version="3.9"><paragraph translatable="False"><inline classes="versionmodified changed">Changed in version 3.9: </inline>Added merge (|) and update (|=) operators, specified in
+                    <versionmodified type="versionchanged" version="3.9"><paragraph translatable="False">Changed in version 3.9: Added merge (|) and update (|=) operators, specified in
                             <index entries="['single',\ 'Python\ Enhancement\ Proposals;\ PEP\ 584',\ 'index-1',\ '',\ None]"></index><target ids="index-1"></target><strong>PEP 584</strong>.</paragraph></versionmodified>
                 </desc_content>
             </desc>
@@ -868,7 +868,7 @@ deque(['c', 'b', 'a'])</literal_block>
                 they add the ability to access fields by name instead of position index.</paragraph>
             <index entries="['single',\ 'namedtuple()\ (in\ module\ collections)',\ 'collections.namedtuple',\ '',\ None]"></index>
             <desc classes="py function" desctype="function" domain="py" noindex="False" objtype="function">
-                <desc_signature class="" classes="sig sig-object py sig sig-object" fullname="namedtuple" ids="collections.namedtuple" module="collections"><desc_addname classes="sig-prename descclassname sig-prename descclassname" xml:space="preserve">collections.</desc_addname><desc_name classes="sig-name descname sig-name descname" xml:space="preserve">namedtuple</desc_name><desc_parameterlist xml:space="preserve"><desc_parameter xml:space="preserve"><desc_sig_name classes="n n">typename</desc_sig_name></desc_parameter><desc_parameter xml:space="preserve"><desc_sig_name classes="n n">field_names</desc_sig_name></desc_parameter><desc_parameter xml:space="preserve"><desc_sig_operator classes="o o">*</desc_sig_operator></desc_parameter><desc_parameter xml:space="preserve"><desc_sig_name classes="n n">rename</desc_sig_name><desc_sig_operator classes="o o">=</desc_sig_operator><inline classes="default_value" support_smartquotes="False">False</inline></desc_parameter><desc_parameter xml:space="preserve"><desc_sig_name classes="n n">defaults</desc_sig_name><desc_sig_operator classes="o o">=</desc_sig_operator><inline classes="default_value" support_smartquotes="False">None</inline></desc_parameter><desc_parameter xml:space="preserve"><desc_sig_name classes="n n">module</desc_sig_name><desc_sig_operator classes="o o">=</desc_sig_operator><inline classes="default_value" support_smartquotes="False">None</inline></desc_parameter></desc_parameterlist></desc_signature>
+                <desc_signature class="" classes="sig sig-object py sig sig-object" fullname="namedtuple" ids="collections.namedtuple" module="collections"><desc_addname classes="sig-prename descclassname sig-prename descclassname" xml:space="preserve">collections.</desc_addname><desc_name classes="sig-name descname sig-name descname" xml:space="preserve">namedtuple</desc_name><desc_parameterlist xml:space="preserve"><desc_parameter xml:space="preserve"><desc_sig_name classes="n n">typename</desc_sig_name></desc_parameter><desc_parameter xml:space="preserve"><desc_sig_name classes="n n">field_names</desc_sig_name></desc_parameter><desc_parameter xml:space="preserve"><desc_sig_operator classes="o o">*</desc_sig_operator></desc_parameter><desc_parameter xml:space="preserve"><desc_sig_name classes="n n">rename</desc_sig_name><desc_sig_operator classes="o o">=</desc_sig_operator>False</desc_parameter><desc_parameter xml:space="preserve"><desc_sig_name classes="n n">defaults</desc_sig_name><desc_sig_operator classes="o o">=</desc_sig_operator>None</desc_parameter><desc_parameter xml:space="preserve"><desc_sig_name classes="n n">module</desc_sig_name><desc_sig_operator classes="o o">=</desc_sig_operator>None</desc_parameter></desc_parameterlist></desc_signature>
                 <desc_content>
                     <paragraph>Returns a new tuple subclass named <emphasis>typename</emphasis>.  The new subclass is used to
                         create tuple-like objects that have fields accessible by attribute lookup as
@@ -887,7 +887,7 @@ deque(['c', 'b', 'a'])</literal_block>
                         with positional names.  For example, ['abc', 'def', 'ghi', 'abc'] is
                         converted to ['abc', '_1', 'ghi', '_3'], eliminating the keyword
                         def and the duplicate fieldname abc.</paragraph>
-                    <paragraph><emphasis>defaults</emphasis> can be None or an <inline classes="xref std std-term">iterable</inline> of default values.
+                    <paragraph><emphasis>defaults</emphasis> can be None or an iterable of default values.
                         Since fields with a default value must come after any fields without a
                         default, the <emphasis>defaults</emphasis> are applied to the rightmost parameters.  For
                         example, if the fieldnames are ['x', 'y', 'z'] and the defaults are
@@ -899,16 +899,16 @@ deque(['c', 'b', 'a'])</literal_block>
                         lightweight and require no more memory than regular tuples.</paragraph>
                     <paragraph>To support pickling, the named tuple class should be assigned to a variable
                         that matches <emphasis>typename</emphasis>.</paragraph>
-                    <versionmodified type="versionchanged" version="3.1"><paragraph translatable="False"><inline classes="versionmodified changed">Changed in version 3.1: </inline>Added support for <emphasis>rename</emphasis>.</paragraph></versionmodified>
-                    <versionmodified type="versionchanged" version="3.6"><paragraph translatable="False"><inline classes="versionmodified changed">Changed in version 3.6: </inline>The <emphasis>verbose</emphasis> and <emphasis>rename</emphasis> parameters became
-                            <inline classes="std std-ref">keyword-only arguments</inline>.</paragraph></versionmodified>
-                    <versionmodified type="versionchanged" version="3.6"><paragraph translatable="False"><inline classes="versionmodified changed">Changed in version 3.6: </inline>Added the <emphasis>module</emphasis> parameter.</paragraph></versionmodified>
-                    <versionmodified type="versionchanged" version="3.7"><paragraph translatable="False"><inline classes="versionmodified changed">Changed in version 3.7: </inline>Removed the <emphasis>verbose</emphasis> parameter and the _source attribute.</paragraph></versionmodified>
-                    <versionmodified type="versionchanged" version="3.7"><paragraph translatable="False"><inline classes="versionmodified changed">Changed in version 3.7: </inline>Added the <emphasis>defaults</emphasis> parameter and the _field_defaults
+                    <versionmodified type="versionchanged" version="3.1"><paragraph translatable="False">Changed in version 3.1: Added support for <emphasis>rename</emphasis>.</paragraph></versionmodified>
+                    <versionmodified type="versionchanged" version="3.6"><paragraph translatable="False">Changed in version 3.6: The <emphasis>verbose</emphasis> and <emphasis>rename</emphasis> parameters became
+                            keyword-only arguments.</paragraph></versionmodified>
+                    <versionmodified type="versionchanged" version="3.6"><paragraph translatable="False">Changed in version 3.6: Added the <emphasis>module</emphasis> parameter.</paragraph></versionmodified>
+                    <versionmodified type="versionchanged" version="3.7"><paragraph translatable="False">Changed in version 3.7: Removed the <emphasis>verbose</emphasis> parameter and the _source attribute.</paragraph></versionmodified>
+                    <versionmodified type="versionchanged" version="3.7"><paragraph translatable="False">Changed in version 3.7: Added the <emphasis>defaults</emphasis> parameter and the _field_defaults
                             attribute.</paragraph></versionmodified>
                 </desc_content>
             </desc>
-            <literal_block groups="default" language="pycon3" linenos="False" options="{4: True}" testnodetype="doctest" xml:space="preserve">&gt;&gt;&gt; # Basic example
+            <paragraph>&gt;&gt;&gt; # Basic example
 &gt;&gt;&gt; Point = namedtuple('Point', ['x', 'y'])
 &gt;&gt;&gt; p = Point(11, y=22)     # instantiate with positional or keyword arguments
 &gt;&gt;&gt; p[0] + p[1]             # indexable like the plain tuple (11, 22)
@@ -919,10 +919,10 @@ deque(['c', 'b', 'a'])</literal_block>
 &gt;&gt;&gt; p.x + p.y               # fields also accessible by name
 33
 &gt;&gt;&gt; p                       # readable __repr__ with a name=value style
-Point(x=11, y=22)</literal_block>
+Point(x=11, y=22)</paragraph>
             <paragraph>Named tuples are especially useful for assigning field names to result tuples returned
                 by the csv or sqlite3 modules:</paragraph>
-            <literal_block force="False" language="python3" linenos="False" xml:space="preserve">EmployeeRecord = namedtuple('EmployeeRecord', 'name, age, title, department, paygrade')
+            <paragraph>EmployeeRecord = namedtuple('EmployeeRecord', 'name, age, title, department, paygrade')
 
 import csv
 for emp in map(EmployeeRecord._make, csv.reader(open("employees.csv", "rb"))):
@@ -933,7 +933,7 @@ conn = sqlite3.connect('/companydata')
 cursor = conn.cursor()
 cursor.execute('SELECT name, age, title, department, paygrade FROM employees')
 for emp in map(EmployeeRecord._make, cursor.fetchall()):
-    print(emp.name, emp.title)</literal_block>
+    print(emp.name, emp.title)</paragraph>
             <paragraph>In addition to the methods inherited from tuples, named tuples support
                 three additional methods and two attributes.  To prevent conflicts with
                 field names, the method and attribute names start with an underscore.</paragraph>
@@ -942,9 +942,9 @@ for emp in map(EmployeeRecord._make, cursor.fetchall()):
                 <desc_signature class="somenamedtuple" classes="sig sig-object py sig sig-object" fullname="somenamedtuple._make" ids="collections.somenamedtuple._make" module="collections"><desc_annotation xml:space="preserve">classmethod<desc_sig_space classes="w w">  </desc_sig_space></desc_annotation><desc_addname classes="sig-prename descclassname sig-prename descclassname" xml:space="preserve">somenamedtuple.</desc_addname><desc_name classes="sig-name descname sig-name descname" xml:space="preserve">_make</desc_name><desc_parameterlist xml:space="preserve"><desc_parameter xml:space="preserve"><desc_sig_name classes="n n">iterable</desc_sig_name></desc_parameter></desc_parameterlist></desc_signature>
                 <desc_content>
                     <paragraph>Class method that makes a new instance from an existing sequence or iterable.</paragraph>
-                    <literal_block groups="default" language="pycon3" linenos="False" options="{}" testnodetype="doctest" xml:space="preserve">&gt;&gt;&gt; t = [11, 22]
+                    <paragraph>&gt;&gt;&gt; t = [11, 22]
 &gt;&gt;&gt; Point._make(t)
-Point(x=11, y=22)</literal_block>
+Point(x=11, y=22)</paragraph>
                 </desc_content>
             </desc>
             <index entries="['single',\ '_asdict()\ (collections.somenamedtuple\ method)',\ 'collections.somenamedtuple._asdict',\ '',\ None]"></index>
@@ -953,11 +953,11 @@ Point(x=11, y=22)</literal_block>
                 <desc_content>
                     <paragraph>Return a new dict which maps field names to their corresponding
                         values:</paragraph>
-                    <literal_block groups="default" language="pycon3" linenos="False" options="{}" testnodetype="doctest" xml:space="preserve">&gt;&gt;&gt; p = Point(x=11, y=22)
+                    <paragraph>&gt;&gt;&gt; p = Point(x=11, y=22)
 &gt;&gt;&gt; p._asdict()
-{'x': 11, 'y': 22}</literal_block>
-                    <versionmodified type="versionchanged" version="3.1"><paragraph translatable="False"><inline classes="versionmodified changed">Changed in version 3.1: </inline>Returns an OrderedDict instead of a regular dict.</paragraph></versionmodified>
-                    <versionmodified type="versionchanged" version="3.8"><paragraph translatable="False"><inline classes="versionmodified changed">Changed in version 3.8: </inline>Returns a regular dict instead of an OrderedDict.
+{'x': 11, 'y': 22}</paragraph>
+                    <versionmodified type="versionchanged" version="3.1"><paragraph translatable="False">Changed in version 3.1: Returns an OrderedDict instead of a regular dict.</paragraph></versionmodified>
+                    <versionmodified type="versionchanged" version="3.8"><paragraph translatable="False">Changed in version 3.8: Returns a regular dict instead of an OrderedDict.
                             As of Python 3.7, regular dicts are guaranteed to be ordered.  If the
                             extra features of OrderedDict are required, the suggested
                             remediation is to cast the result to the desired type:
@@ -970,12 +970,12 @@ Point(x=11, y=22)</literal_block>
                 <desc_content>
                     <paragraph>Return a new instance of the named tuple replacing specified fields with new
                         values:</paragraph>
-                    <literal_block force="False" language="python3" linenos="False" xml:space="preserve">&gt;&gt;&gt; p = Point(x=11, y=22)
+                    <paragraph>&gt;&gt;&gt; p = Point(x=11, y=22)
 &gt;&gt;&gt; p._replace(x=33)
 Point(x=33, y=22)
 
 &gt;&gt;&gt; for partnum, record in inventory.items():
-...     inventory[partnum] = record._replace(price=newprices[partnum], timestamp=time.now())</literal_block>
+...     inventory[partnum] = record._replace(price=newprices[partnum], timestamp=time.now())</paragraph>
                 </desc_content>
             </desc>
             <index entries="['single',\ '_fields\ (collections.somenamedtuple\ attribute)',\ 'collections.somenamedtuple._fields',\ '',\ None]"></index>
@@ -984,13 +984,13 @@ Point(x=33, y=22)
                 <desc_content>
                     <paragraph>Tuple of strings listing the field names.  Useful for introspection
                         and for creating new named tuple types from existing named tuples.</paragraph>
-                    <literal_block groups="default" language="pycon3" linenos="False" options="{}" testnodetype="doctest" xml:space="preserve">&gt;&gt;&gt; p._fields            # view the field names
+                    <paragraph>&gt;&gt;&gt; p._fields            # view the field names
 ('x', 'y')
 
 &gt;&gt;&gt; Color = namedtuple('Color', 'red green blue')
 &gt;&gt;&gt; Pixel = namedtuple('Pixel', Point._fields + Color._fields)
 &gt;&gt;&gt; Pixel(11, 22, 128, 255, 0)
-Pixel(x=11, y=22, red=128, green=255, blue=0)</literal_block>
+Pixel(x=11, y=22, red=128, green=255, blue=0)</paragraph>
                 </desc_content>
             </desc>
             <index entries="['single',\ '_field_defaults\ (collections.somenamedtuple\ attribute)',\ 'collections.somenamedtuple._field_defaults',\ '',\ None]"></index>
@@ -998,11 +998,11 @@ Pixel(x=11, y=22, red=128, green=255, blue=0)</literal_block>
                 <desc_signature class="somenamedtuple" classes="sig sig-object py sig sig-object" fullname="somenamedtuple._field_defaults" ids="collections.somenamedtuple._field_defaults" module="collections"><desc_addname classes="sig-prename descclassname sig-prename descclassname" xml:space="preserve">somenamedtuple.</desc_addname><desc_name classes="sig-name descname sig-name descname" xml:space="preserve">_field_defaults</desc_name></desc_signature>
                 <desc_content>
                     <paragraph>Dictionary mapping field names to default values.</paragraph>
-                    <literal_block groups="default" language="pycon3" linenos="False" options="{}" testnodetype="doctest" xml:space="preserve">&gt;&gt;&gt; Account = namedtuple('Account', ['type', 'balance'], defaults=[0])
+                    <paragraph>&gt;&gt;&gt; Account = namedtuple('Account', ['type', 'balance'], defaults=[0])
 &gt;&gt;&gt; Account._field_defaults
 {'balance': 0}
 &gt;&gt;&gt; Account('premium')
-Account(type='premium', balance=0)</literal_block>
+Account(type='premium', balance=0)</paragraph>
                 </desc_content>
             </desc>
             <paragraph>To retrieve a field whose name is stored in a string, use the getattr()
@@ -1010,14 +1010,14 @@ Account(type='premium', balance=0)</literal_block>
             <doctest_block classes="doctest" xml:space="preserve">&gt;&gt;&gt; getattr(p, 'x')
 11</doctest_block>
             <paragraph>To convert a dictionary to a named tuple, use the double-star-operator
-                (as described in <inline classes="std std-ref">Unpacking Argument Lists</inline>):</paragraph>
+                (as described in Unpacking Argument Lists):</paragraph>
             <doctest_block classes="doctest" xml:space="preserve">&gt;&gt;&gt; d = {'x': 11, 'y': 22}
 &gt;&gt;&gt; Point(**d)
 Point(x=11, y=22)</doctest_block>
             <paragraph>Since a named tuple is a regular Python class, it is easy to add or change
                 functionality with a subclass.  Here is how to add a calculated field and
                 a fixed-width print format:</paragraph>
-            <literal_block groups="default" language="pycon3" linenos="False" options="{}" testnodetype="doctest" xml:space="preserve">&gt;&gt;&gt; class Point(namedtuple('Point', ['x', 'y'])):
+            <paragraph>&gt;&gt;&gt; class Point(namedtuple('Point', ['x', 'y'])):
 ...     __slots__ = ()
 ...     @property
 ...     def hypot(self):
@@ -1028,7 +1028,7 @@ Point(x=11, y=22)</doctest_block>
 &gt;&gt;&gt; for p in Point(3, 4), Point(14, 5/7):
 ...     print(p)
 Point: x= 3.000  y= 4.000  hypot= 5.000
-Point: x=14.000  y= 0.714  hypot=14.018</literal_block>
+Point: x=14.000  y= 0.714  hypot=14.018</paragraph>
             <paragraph>The subclass shown above sets __slots__ to an empty tuple.  This helps
                 keep memory requirements low by preventing the creation of instance dictionaries.</paragraph>
             <paragraph>Subclassing is not useful for adding new, stored fields.  Instead, simply
@@ -1041,17 +1041,17 @@ Point: x=14.000  y= 0.714  hypot=14.018</literal_block>
 &gt;&gt;&gt; Book.id.__doc__ = '13-digit ISBN'
 &gt;&gt;&gt; Book.title.__doc__ = 'Title of first printing'
 &gt;&gt;&gt; Book.authors.__doc__ = 'List of authors sorted by last name'</doctest_block>
-            <versionmodified type="versionchanged" version="3.5"><paragraph translatable="False"><inline classes="versionmodified changed">Changed in version 3.5: </inline>Property docstrings became writeable.</paragraph></versionmodified>
+            <versionmodified type="versionchanged" version="3.5"><paragraph translatable="False">Changed in version 3.5: Property docstrings became writeable.</paragraph></versionmodified>
             <seealso>
                 <bullet_list bullet="*">
                     <list_item>
                         <paragraph>See typing.NamedTuple for a way to add type hints for named
                             tuples.  It also provides an elegant notation using the class
                             keyword:</paragraph>
-                        <literal_block force="False" language="python3" linenos="False" xml:space="preserve">class Component(NamedTuple):
+                        <paragraph>class Component(NamedTuple):
     part_number: int
     weight: float
-    description: Optional[str] = None</literal_block>
+    description: Optional[str] = None</paragraph>
                     </list_item>
                     <list_item>
                         <paragraph>See types.SimpleNamespace() for a mutable namespace based on an
@@ -1121,10 +1121,10 @@ last=True) with d[k] = d.pop(k) which will move the key and its
                 <desc_content>
                     <paragraph>Return an instance of a dict subclass that has methods
                         specialized for rearranging dictionary order.</paragraph>
-                    <versionmodified type="versionadded" version="3.1"><paragraph translatable="False"><inline classes="versionmodified added">New in version 3.1.</inline></paragraph></versionmodified>
+                    <versionmodified type="versionadded" version="3.1"><paragraph translatable="False">New in version 3.1.</paragraph></versionmodified>
                     <index entries="['single',\ 'popitem()\ (collections.OrderedDict\ method)',\ 'collections.OrderedDict.popitem',\ '',\ None]"></index>
                     <desc classes="py method" desctype="method" domain="py" noindex="False" objtype="method">
-                        <desc_signature class="OrderedDict" classes="sig sig-object py sig sig-object" fullname="OrderedDict.popitem" ids="collections.OrderedDict.popitem" module="collections"><desc_name classes="sig-name descname sig-name descname" xml:space="preserve">popitem</desc_name><desc_parameterlist xml:space="preserve"><desc_parameter xml:space="preserve"><desc_sig_name classes="n n">last</desc_sig_name><desc_sig_operator classes="o o">=</desc_sig_operator><inline classes="default_value" support_smartquotes="False">True</inline></desc_parameter></desc_parameterlist></desc_signature>
+                        <desc_signature class="OrderedDict" classes="sig sig-object py sig sig-object" fullname="OrderedDict.popitem" ids="collections.OrderedDict.popitem" module="collections"><desc_name classes="sig-name descname sig-name descname" xml:space="preserve">popitem</desc_name><desc_parameterlist xml:space="preserve"><desc_parameter xml:space="preserve"><desc_sig_name classes="n n">last</desc_sig_name><desc_sig_operator classes="o o">=</desc_sig_operator>True</desc_parameter></desc_parameterlist></desc_signature>
                         <desc_content>
                             <paragraph>The popitem() method for ordered dictionaries returns and removes a
                                 (key, value) pair.  The pairs are returned in
@@ -1134,20 +1134,20 @@ last=True) with d[k] = d.pop(k) which will move the key and its
                     </desc>
                     <index entries="['single',\ 'move_to_end()\ (collections.OrderedDict\ method)',\ 'collections.OrderedDict.move_to_end',\ '',\ None]"></index>
                     <desc classes="py method" desctype="method" domain="py" noindex="False" objtype="method">
-                        <desc_signature class="OrderedDict" classes="sig sig-object py sig sig-object" fullname="OrderedDict.move_to_end" ids="collections.OrderedDict.move_to_end" module="collections"><desc_name classes="sig-name descname sig-name descname" xml:space="preserve">move_to_end</desc_name><desc_parameterlist xml:space="preserve"><desc_parameter xml:space="preserve"><desc_sig_name classes="n n">key</desc_sig_name></desc_parameter><desc_parameter xml:space="preserve"><desc_sig_name classes="n n">last</desc_sig_name><desc_sig_operator classes="o o">=</desc_sig_operator><inline classes="default_value" support_smartquotes="False">True</inline></desc_parameter></desc_parameterlist></desc_signature>
+                        <desc_signature class="OrderedDict" classes="sig sig-object py sig sig-object" fullname="OrderedDict.move_to_end" ids="collections.OrderedDict.move_to_end" module="collections"><desc_name classes="sig-name descname sig-name descname" xml:space="preserve">move_to_end</desc_name><desc_parameterlist xml:space="preserve"><desc_parameter xml:space="preserve"><desc_sig_name classes="n n">key</desc_sig_name></desc_parameter><desc_parameter xml:space="preserve"><desc_sig_name classes="n n">last</desc_sig_name><desc_sig_operator classes="o o">=</desc_sig_operator>True</desc_parameter></desc_parameterlist></desc_signature>
                         <desc_content>
                             <paragraph>Move an existing <emphasis>key</emphasis> to either end of an ordered dictionary.  The item
                                 is moved to the right end if <emphasis>last</emphasis> is true (the default) or to the
                                 beginning if <emphasis>last</emphasis> is false.  Raises KeyError if the <emphasis>key</emphasis> does
                                 not exist:</paragraph>
-                            <literal_block groups="default" language="pycon3" linenos="False" options="{}" testnodetype="doctest" xml:space="preserve">&gt;&gt;&gt; d = OrderedDict.fromkeys('abcde')
+                            <paragraph>&gt;&gt;&gt; d = OrderedDict.fromkeys('abcde')
 &gt;&gt;&gt; d.move_to_end('b')
 &gt;&gt;&gt; ''.join(d)
 'acdeb'
 &gt;&gt;&gt; d.move_to_end('b', last=False)
 &gt;&gt;&gt; ''.join(d)
-'bacde'</literal_block>
-                            <versionmodified type="versionadded" version="3.2"><paragraph translatable="False"><inline classes="versionmodified added">New in version 3.2.</inline></paragraph></versionmodified>
+'bacde'</paragraph>
+                            <versionmodified type="versionadded" version="3.2"><paragraph translatable="False">New in version 3.2.</paragraph></versionmodified>
                         </desc_content>
                     </desc>
                 </desc_content>
@@ -1160,27 +1160,27 @@ last=True) with d[k] = d.pop(k) which will move the key and its
                 Mapping objects are order-insensitive like regular
                 dictionaries.  This allows OrderedDict objects to be substituted
                 anywhere a regular dictionary is used.</paragraph>
-            <versionmodified type="versionchanged" version="3.5"><paragraph translatable="False"><inline classes="versionmodified changed">Changed in version 3.5: </inline>The items, keys, and values <inline classes="xref std std-term">views</inline>
+            <versionmodified type="versionchanged" version="3.5"><paragraph translatable="False">Changed in version 3.5: The items, keys, and values views
                     of OrderedDict now support reverse iteration using reversed().</paragraph></versionmodified>
-            <versionmodified type="versionchanged" version="3.6"><paragraph translatable="False"><inline classes="versionmodified changed">Changed in version 3.6: </inline>With the acceptance of <index entries="['single',\ 'Python\ Enhancement\ Proposals;\ PEP\ 468',\ 'index-2',\ '',\ None]"></index><target ids="index-2"></target><strong>PEP 468</strong>, order is retained for keyword arguments
+            <versionmodified type="versionchanged" version="3.6"><paragraph translatable="False">Changed in version 3.6: With the acceptance of <index entries="['single',\ 'Python\ Enhancement\ Proposals;\ PEP\ 468',\ 'index-2',\ '',\ None]"></index><target ids="index-2"></target><strong>PEP 468</strong>, order is retained for keyword arguments
                     passed to the OrderedDict constructor and its update()
                     method.</paragraph></versionmodified>
-            <versionmodified type="versionchanged" version="3.9"><paragraph translatable="False"><inline classes="versionmodified changed">Changed in version 3.9: </inline>Added merge (|) and update (|=) operators, specified in <index entries="['single',\ 'Python\ Enhancement\ Proposals;\ PEP\ 584',\ 'index-3',\ '',\ None]"></index><target ids="index-3"></target><strong>PEP 584</strong>.</paragraph></versionmodified>
+            <versionmodified type="versionchanged" version="3.9"><paragraph translatable="False">Changed in version 3.9: Added merge (|) and update (|=) operators, specified in <index entries="['single',\ 'Python\ Enhancement\ Proposals;\ PEP\ 584',\ 'index-3',\ '',\ None]"></index><target ids="index-3"></target><strong>PEP 584</strong>.</paragraph></versionmodified>
             <section ids="ordereddict-examples-and-recipes" names="ordereddict\ examples\ and\ recipes">
                 <title>OrderedDict Examples and Recipes</title>
                 <paragraph>It is straightforward to create an ordered dictionary variant
                     that remembers the order the keys were <emphasis>last</emphasis> inserted.
                     If a new entry overwrites an existing entry, the
                     original insertion position is changed and moved to the end:</paragraph>
-                <literal_block force="False" language="python3" linenos="False" xml:space="preserve">class LastUpdatedOrderedDict(OrderedDict):
+                <paragraph>class LastUpdatedOrderedDict(OrderedDict):
     'Store items in the order the keys were last added'
 
     def __setitem__(self, key, value):
         super().__setitem__(key, value)
-        self.move_to_end(key)</literal_block>
+        self.move_to_end(key)</paragraph>
                 <paragraph>An OrderedDict would also be useful for implementing
                     variants of functools.lru_cache():</paragraph>
-                <literal_block groups="default" language="python3" linenos="False" options="{}" testnodetype="testcode" xml:space="preserve">from collections import OrderedDict
+                <paragraph>from collections import OrderedDict
 from time import time
 
 class TimeBoundedLRU:
@@ -1202,8 +1202,8 @@ class TimeBoundedLRU:
         self.cache[args] = time(), result
         if len(self.cache) &gt; self.maxsize:
             self.cache.popitem(0)
-        return result</literal_block>
-                <literal_block groups="default" language="python3" linenos="False" options="{}" testnodetype="testcode" xml:space="preserve">class MultiHitLRUCache:
+        return result</paragraph>
+                <paragraph>class MultiHitLRUCache:
     """ LRU cache that defers caching a result until
         it has been requested multiple times.
 
@@ -1235,7 +1235,7 @@ class TimeBoundedLRU:
             self.cache[args] = result
             if len(self.cache) &gt; self.maxsize:
                 self.cache.popitem(0)
-        return result</literal_block>
+        return result</paragraph>
                 <comment groups="default" language="pycon3" options="{}" testnodetype="doctest" xml:space="preserve">&gt;&gt;&gt; def square(x):
 ...     return x * x
 ...
@@ -1363,7 +1363,7 @@ True</comment>
                                 UserString class.</paragraph>
                         </desc_content>
                     </desc>
-                    <versionmodified type="versionchanged" version="3.5"><paragraph translatable="False"><inline classes="versionmodified changed">Changed in version 3.5: </inline>New methods __getnewargs__, __rmod__, casefold,
+                    <versionmodified type="versionchanged" version="3.5"><paragraph translatable="False">Changed in version 3.5: New methods __getnewargs__, __rmod__, casefold,
                             format_map, isprintable, and maketrans.</paragraph></versionmodified>
                 </desc_content>
             </desc>
