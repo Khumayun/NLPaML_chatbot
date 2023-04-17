@@ -1,6 +1,7 @@
 # custom
 *env.yml
 .ipynb_checkpoints/*
+
 _static/*
 
 # Byte-compiled / optimized / DLL files
