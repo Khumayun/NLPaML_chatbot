@@ -22,4 +22,4 @@ because it creates separate dict for a link and removes the_text
 - put the xml files in data folder
 - run parser `python data_converter/module/parse.py path/to/input.xml path/to/output.json`\
 or use runner function in data_converter/src/parse.py
-- regex for tag removal: `<\/?(inline|literal|reference|literal_block).*?>`
+- regex for tag removal: `<\/?(emphasis|inline|literal|reference|literal_block).*?>`
